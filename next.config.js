@@ -14,7 +14,6 @@ const nextConfigs = {
     sketchesCount,
     sketchesList,
   },
-  exportTrailingSlash: true,
 
   exportPathMap: async function (defaultPathMap) {
     const myPathMap = {};
@@ -26,7 +25,6 @@ const nextConfigs = {
         },
       };
     });
-    console.log(myPathMap);
     return {
       "/": { page: "/" },
       ...myPathMap,
