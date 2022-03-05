@@ -2,7 +2,7 @@
 
 A gallery website for making p5.js sketches built with Next.js. Just fork and edit how you want.
 
-Deployed [here with Vercel](https://daily-p5-aunnnn.vercel.app/)
+Deployed [here with Vercel](https://sketches-iu3mskte0-willcmcc.vercel.app/)
 
 NOTE: Unlike pure p5.js where you can access draw function globally, you have to use variable `p` to draw. (E.g., `p.rect(...)`, `p.line(...)`, etc.)
 
