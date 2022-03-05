@@ -18,15 +18,14 @@ const nextConfigs = {
   exportPathMap: async function (defaultPathMap) {
     const myPathMap = {};
     const range = (n) => Array.from({ length: n }, (v, k) => k);
-    for (const _i of range(sketchesCount)) {
-      const i = _i + 1;
-      myPathMap[`/s/${i}`] = {
+    sketchesList.map((sk) => {
+      myPathMap[`/s/${sk}`] = {
         page: "p5page",
         query: {
-          sketchId: i,
+          sketchId: sk,
         },
       };
-    }
+    });
     return {
       "/": { page: "/" },
       ...myPathMap,

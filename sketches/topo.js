@@ -22,7 +22,7 @@ const Sketch = (W, H) => (p) => {
     second,
     set,
   } = p;
-  const maxHeight = 10000;
+  const maxHeight = 100;
   const heightMarker = 5;
   const tf = new (Transformer(p))();
 
@@ -31,11 +31,11 @@ const Sketch = (W, H) => (p) => {
     p.angleMode(RADIANS);
     p.background(0);
     let white = p.color(255);
-
     for (let x = 0; x < W; x++) {
       for (let y = 0; y < H; y++) {
         const v = p.noise(0.01 * x, 0.01 * y);
-        const shouldBeColoredIn = Math.round(v * 100) % 5 === 0;
+        const shouldBeColoredIn =
+          Math.round(v * maxHeight) % heightMarker === 0;
         if (shouldBeColoredIn) {
           let white = p.color((x / W) * 255, (y / H) * 255, v * 255);
 

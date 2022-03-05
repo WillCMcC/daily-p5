@@ -26,7 +26,7 @@ class P5Page extends Component {
         </div>
       );
     }
-    const sketch = require(`../sketches/${id}`).default(600, 600);
+    const sketch = require(`../sketches/${id}`).default(1000, 600);
     return <P5Wrapper sketch={sketch} />;
   };
 
@@ -35,14 +35,21 @@ class P5Page extends Component {
       <div>
         <div className="container">
           {this.renderP5(this.props.sketchId)}
-          <button
-            onClick={() => {
-              window.p.save(`${id_to_use.replace(".js", "")}.jpg`);
+          <div
+            style={{
+              display: "flex",
+              gap: " 10px",
             }}
-            className="primary-button"
           >
-            Save
-          </button>
+            <button
+              onClick={() => {
+                window.p.save(`${id_to_use.replace(".js", "")}.jpg`);
+              }}
+              className="primary-button"
+            >
+              Save
+            </button>
+          </div>
         </div>
         <style jsx>{`
           .container {
