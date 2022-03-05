@@ -21,8 +21,8 @@ const Sketch = (W, H) => (p) => {
     second,
     set,
   } = p;
-  const maxHeight = 10000;
-  const heightMarker = 5;
+  const maxHeight = 1000000;
+  const heightMarker = 50;
   const tf = new (Transformer(p))();
 
   p.setup = () => {
@@ -33,14 +33,11 @@ const Sketch = (W, H) => (p) => {
 
     for (let x = 0; x < W; x++) {
       for (let y = 0; y < H; y++) {
-        const v = p.noise(x, y, 1);
-        const shouldBeColoredIn =
-          Math.round(v * maxHeight) % heightMarker === 0;
-        if (shouldBeColoredIn) {
-          let white = p.color((x / W) * 255, (y / H) * 255, v * 255);
+        const noise = p.noise(0.01 * x, 0.01 * y);
 
-          p.set(x, y, white);
-        }
+        var c = 255 * noise;
+
+        p.set(x, y, c);
       }
     }
     p.updatePixels();
