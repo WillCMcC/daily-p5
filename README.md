@@ -14,10 +14,10 @@ NOTE: Unlike pure p5.js where you can access draw function globally, you have to
 
 ### Make a new sketch
 
-1. `npm run new-sketch`, it automatically creates a new js file for a sketch in the format of dn.js, e.g., `d1.js`, `d2.js`, ...
+1. `npm run new-sketch ${NAME}`, it automatically creates a new js file for a sketch in the format of NAME.js ...
 2. Code!
 
 ### Navigation
 
 - Go to `http://localhost:3000` to view all sketches. 
-- Go to `http://localhost:3000/s/1` to view `d1.js` sketch.
+- Go to `http://localhost:3000/s/NAME` to view `NAME.js` sketch.
