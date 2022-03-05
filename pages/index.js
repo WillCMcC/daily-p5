@@ -15,7 +15,7 @@ const P5Wrapper = dynamic(import("react-p5-wrapper"), {
 class IndexPage extends Component {
   render() {
     const TOTAL_SKETCHES = Const.sketchesCount;
-    console.log(Const.sketchesList);
+
     return (
       <Main>
         <Head>
@@ -46,8 +46,6 @@ class IndexPage extends Component {
         </div>
         <style jsx>{`
           .sketch-container {
-            border-width: 1px;
-            border-style: solid;
             display: inline-block;
             margin: 8px;
           }
