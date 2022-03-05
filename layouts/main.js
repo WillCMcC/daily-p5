@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
-import Link from 'next/link';
+import React, { Component } from "react";
+import Link from "next/link";
 
 const Main = ({ children }) => (
   <div className="main">
-    <div className="logo">
-      <Link href="/"><a>daily p5</a></Link>
-    </div>
+    {children}
 
-    { children }
-
-    { /* local styles */ }
+    {/* local styles */}
     <style jsx>{`
       .main {
         padding: 25px 50px;
@@ -43,5 +39,5 @@ const Main = ({ children }) => (
       }
     `}</style>
   </div>
-)
+);
 export default Main;

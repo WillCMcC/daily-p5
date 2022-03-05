@@ -9,7 +9,7 @@
     "build": "next build",
     "export": "next build & next export",
     "deploy": "now",
-    "new-sketch": "scripts/new-sketch.sh",
+    "ns": "scripts/new-sketch.sh",
     "postinstall": "next build"
   },
   "author": "aunnnn",
