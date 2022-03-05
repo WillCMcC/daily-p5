@@ -6,7 +6,7 @@ const P5Wrapper = dynamic(import("react-p5-wrapper"), {
   loading: () => <p>Loading...</p>,
   ssr: false,
 });
-
+let id_to_use;
 class P5Page extends Component {
   static async getInitialProps(ctx) {
     const sketchId = ctx.query.sketchId;
@@ -16,6 +16,7 @@ class P5Page extends Component {
   }
 
   renderP5 = (id) => {
+    id_to_use = id;
     const TOTAL_SKETCHES = Const.sketchesCount;
     if (!Const.sketchesList.includes(id)) {
       return (
@@ -32,7 +33,17 @@ class P5Page extends Component {
   render() {
     return (
       <div>
-        <div className="container">{this.renderP5(this.props.sketchId)}</div>
+        <div className="container">
+          {this.renderP5(this.props.sketchId)}
+          <button
+            onClick={() => {
+              window.p.save(`${id_to_use.replace(".js", "")}.jpg`);
+            }}
+            class="primary-button"
+          >
+            Save
+          </button>
+        </div>
         <style jsx>{`
           .container {
             margin: 8px;

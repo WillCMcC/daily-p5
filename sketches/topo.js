@@ -2,6 +2,7 @@ import Transformer from "../utils/transformer";
 import { range } from "../utils/utils";
 
 const Sketch = (W, H) => (p) => {
+  window.p = p;
   let {
     // Constants
     RADIANS,
