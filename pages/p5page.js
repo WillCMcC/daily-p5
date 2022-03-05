@@ -26,7 +26,7 @@ class P5Page extends Component {
         </div>
       );
     }
-    const sketch = require(`../sketches/${id}`).default(1000, 600);
+    const sketch = require(`../sketches/${id}`).default(800, 600);
     return <P5Wrapper sketch={sketch} />;
   };
 

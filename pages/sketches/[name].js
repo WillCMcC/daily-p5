@@ -21,7 +21,7 @@ const P5 = () => {
       </div>
     );
   }
-  const sketch = require(`../../sketches/${id_to_use}`).default(1000, 600);
+  const sketch = require(`../../sketches/${id_to_use}`).default(1000, 1000);
   return <P5Wrapper sketch={sketch} />;
 };
 
