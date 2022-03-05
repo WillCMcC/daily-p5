@@ -18,7 +18,6 @@ const nextConfigs = {
 
   exportPathMap: async function (defaultPathMap) {
     const myPathMap = {};
-    const range = (n) => Array.from({ length: n }, (v, k) => k);
     sketchesList.map((sk) => {
       myPathMap[`/s/${sk}`] = {
         page: "p5page",
@@ -27,6 +26,7 @@ const nextConfigs = {
         },
       };
     });
+    console.log(myPathMap);
     return {
       "/": { page: "/" },
       ...myPathMap,
