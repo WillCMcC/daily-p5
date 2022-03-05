@@ -35,7 +35,7 @@ class IndexPage extends Component {
                   </div>
                   <a
                     className="primary-button"
-                    onClick={() => Router.pushRoute(`/s/${sk}`)}
+                    onClick={() => Router.pushRoute(`/sketches/${sk}`)}
                   >
                     View {sk}
                   </a>
