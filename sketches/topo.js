@@ -25,7 +25,7 @@ const Sketch = (W, H) => (p) => {
   const maxHeight = 1000;
   const heightMarker = 50;
   const tf = new (Transformer(p))();
-  const resolution = Math.random() * 100;
+  const resolution = Math.random() * 26;
   p.setup = () => {
     p.createCanvas(W, H);
     p.angleMode(RADIANS);
