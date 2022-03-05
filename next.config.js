@@ -14,6 +14,7 @@ const nextConfigs = {
     sketchesCount,
     sketchesList,
   },
+  exportTrailingSlash: true,
 
   exportPathMap: async function (defaultPathMap) {
     const myPathMap = {};
