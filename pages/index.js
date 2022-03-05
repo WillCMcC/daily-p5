@@ -31,7 +31,7 @@ class IndexPage extends Component {
               return (
                 <div key={`sketch-${sk}`} className="sketch-container">
                   <div className="sketch-holder">
-                    <P5Wrapper sketch={sketch(200, 200)} />
+                    <P5Wrapper sketch={sketch(200, 200, true)} />
                   </div>
                   <a
                     className="primary-button"
