@@ -39,7 +39,7 @@ class P5Page extends Component {
             onClick={() => {
               window.p.save(`${id_to_use.replace(".js", "")}.jpg`);
             }}
-            class="primary-button"
+            className="primary-button"
           >
             Save
           </button>
