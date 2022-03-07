@@ -32,6 +32,8 @@ const Sketch =
     const tf = new (Transformer(p))();
     const resolution = Math.random() * 26;
     const waterHeight = 0.25;
+    const mountainHeight = 0.7;
+    const heights = [];
     p.setup = () => {
       p.createCanvas(W, H);
       p.angleMode(RADIANS);
@@ -45,14 +47,52 @@ const Sketch =
           let white = p.color(255 * v);
 
           if (v < waterHeight) {
-            white = p.color(v * 255, v * 255, 255);
+            white = p.color(v * 255 * 0.5, 0, 255);
+          } else if (v > mountainHeight) {
+            white = p.color(255);
           } else if (shouldBeColoredIn) {
             white = p.color(0);
           }
           p.set(x, y, white);
+          heights.push({
+            x,
+            y,
+            v,
+          });
         }
       }
       p.updatePixels();
+
+      const max = heights.reduce((item, acc) => {
+        if (item?.v > acc?.v) {
+          return item;
+        }
+        return acc;
+      }, {});
+      const red = p.color(255, 0, 0);
+      p.fill(red);
+      p.circle(max.x, max.y, 25);
+      p.textSize(12);
+      p.text(
+        `peak at ${max.v * maxHeight}m`,
+        p.constrain(max.x, 25, window.innerWidth - 100),
+        p.constrain(max.y + 26, 25, window.innerHeight - 25)
+      );
+      const min = heights.reduce((item, acc) => {
+        if (item?.v < acc?.v) {
+          return item;
+        }
+        return acc;
+      }, {});
+      const blue = p.color(0, 255, 0);
+      p.fill(blue);
+      p.stroke(p.color(0));
+      p.circle(min.x, min.y, 25);
+      p.text(
+        `low at ${min.v * maxHeight}m`,
+        p.constrain(min.x, 25, window.innerWidth - 100),
+        p.constrain(min.y + 26, 25, window.innerHeight - 25)
+      );
     };
 
     p.draw = () => {};
